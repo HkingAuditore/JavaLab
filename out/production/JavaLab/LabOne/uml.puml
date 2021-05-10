@@ -1,0 +1,25 @@
+@startuml
+class LabOne.Account {
+- int _id
+- double _balance
+- {static} double annualInterestRate
++ int getId()
++ void setId(int)
++ double getBalance()
++ void setBalance(double)
++ {static} double getAnnualInterestRate()
++ {static} void setAnnualInterestRate(double)
++ double getMonthlyInterest()
++ void withdraw(double)
++ void deposit(double)
+}
+class LabOne.AccountException {
+- AccountExceptionType exceptionType
++ AccountExceptionType getExceptionType()
+}
+enum LabOne.AccountExceptionType
+
+LabOne.Account --> LabOne.AccountException
+LabOne.AccountException --> LabOne.AccountExceptionType
+LabOne.Exception <|-- LabOne.AccountException
+@enduml
