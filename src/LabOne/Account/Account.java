@@ -1,6 +1,6 @@
-package LabOne;
+package LabOne.Account;
 
-public class Account {
+public class Account  {
     private static double annualInterestRate;
     private int _id;
     private double _balance;
@@ -11,7 +11,7 @@ public class Account {
 
     }
 
-    Account(int id, double balance) {
+    public Account(int id, double balance) {
         this._id = id;
         this._balance = balance;
     }
@@ -49,16 +49,26 @@ public class Account {
     //endregion
 
     /**
+     * 账户月利息
      * @return 月利息
      */
     public double getMonthlyInterest() {
         return _balance * (Account.getAnnualInterestRate() / 12);
     }
 
+    /**
+     *  取款
+     * @param money 取款额
+     * @throws AccountException 余额不足出错
+     */
     public void withdraw(double money) throws AccountException {
         this.setBalance(this.getBalance() - money);
     }
 
+    /**
+     *  存款
+     * @param money 存款金额
+     */
     public void deposit(double money) {
         try {
             this.setBalance(this.getBalance() + money);

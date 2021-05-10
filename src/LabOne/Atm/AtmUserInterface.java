@@ -1,4 +1,4 @@
-package LabOne;
+package LabOne.Atm;
 
 import java.util.Scanner;
 

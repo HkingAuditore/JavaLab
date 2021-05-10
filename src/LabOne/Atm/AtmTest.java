@@ -1,4 +1,4 @@
-package LabOne;
+package LabOne.Atm;
 
 public class AtmTest {
     public static void main(String[] args) {

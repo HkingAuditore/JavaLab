@@ -1,4 +1,4 @@
-package LabOne;
+package LabOne.Account;
 
 public class AccountException extends Exception {
     private final AccountExceptionType exceptionType;

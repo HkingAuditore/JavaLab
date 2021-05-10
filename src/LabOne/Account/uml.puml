@@ -1,5 +1,5 @@
 @startuml
-class LabOne.Account {
+class LabOne.Account.Account {
 - int _id
 - double _balance
 - {static} double annualInterestRate
@@ -13,13 +13,13 @@ class LabOne.Account {
 + void withdraw(double)
 + void deposit(double)
 }
-class LabOne.AccountException {
+class LabOne.Account.AccountException {
 - AccountExceptionType exceptionType
 + AccountExceptionType getExceptionType()
 }
-enum LabOne.AccountExceptionType
+enum LabOne.Account.AccountExceptionType
 
-LabOne.Account --> LabOne.AccountException
-LabOne.AccountException --> LabOne.AccountExceptionType
-LabOne.Exception <|-- LabOne.AccountException
+LabOne.Account.Account --> LabOne.Account.AccountException
+LabOne.Account.AccountException --> LabOne.Account.AccountExceptionType
+Exception <|-- LabOne.Account.AccountException
 @enduml

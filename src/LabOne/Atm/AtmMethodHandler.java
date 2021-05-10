@@ -1,4 +1,6 @@
-package LabOne;
+package LabOne.Atm;
+
+import LabOne.Account.AccountException;
 
 @FunctionalInterface
 interface IMethod {
