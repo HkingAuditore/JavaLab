@@ -7,10 +7,10 @@ public class FullTimeSalesman extends FullTimeEmployee implements ISales {
 	private double _salesCommission = .05;
 	private double _sales;
 
-	public FullTimeSalesman(double salesCommission, double sales) {
-		this._salesCommission = salesCommission;
-		this._sales           = sales;
-		this.setEmployeeType(EmployeeType.SALES_FULL_SALESMAN);
+	public FullTimeSalesman() {
+		this.setEmployeeType(EmployeeType.SALES_FULL_TIME_SALESMAN);
+		this.monthlyBasicSalary = 3000;
+
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class FullTimeSalesman extends FullTimeEmployee implements ISales {
 
 	@Override
 	public void setSales(double sales) {
-		this._sales =sales;
+		this._sales =Math.max(0,sales);
 	}
 
 	@Override

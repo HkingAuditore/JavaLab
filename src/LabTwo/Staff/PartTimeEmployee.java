@@ -19,6 +19,7 @@ public abstract class PartTimeEmployee extends Employee{
 		return _dailyWorkingHours;
 	}
 	public void setDailyWorkingHours(double _dailyWorkingHours) {
+		_dailyWorkingHours = StaticFunctions.clamp(_dailyWorkingHours,0.0,24.0);
 		this._dailyWorkingHours = _dailyWorkingHours;
 	}
 

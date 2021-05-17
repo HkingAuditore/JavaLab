@@ -4,13 +4,12 @@ import LabTwo.Staff.EmployeeType;
 import LabTwo.Staff.FullTimeEmployee;
 
 public class SalesManager extends FullTimeEmployee implements ISales{
-	private double _salesCommission = .05;
-	private double _sales;
+	private double _salesCommission = .01;
+	private double _salesTotal;
 
-	public SalesManager(double salesCommission, double sales) {
-		this._salesCommission = salesCommission;
-		this._sales           = sales;
+	public SalesManager() {
 		this.setEmployeeType(EmployeeType.SALES_SALES_MANAGER);
+		this.monthlyBasicSalary = 5000;
 	}
 
 	@Override
@@ -20,12 +19,12 @@ public class SalesManager extends FullTimeEmployee implements ISales{
 
 	@Override
 	public double getSales() {
-		return _sales;
+		return _salesTotal;
 	}
 
 	@Override
 	public void setSales(double sales) {
-		this._sales = sales;
+		this._salesTotal = Math.max(0,sales);
 	}
 
 	@Override

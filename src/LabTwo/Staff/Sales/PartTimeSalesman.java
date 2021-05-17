@@ -7,9 +7,8 @@ public class PartTimeSalesman extends PartTimeEmployee implements ISales{
 	private final double _salesCommission = .0;
 	private double _sales;
 
-	public PartTimeSalesman(double sales,double hourlyRate) {
-		this._sales = sales;
-		this._hourlyRate = hourlyRate;
+	public PartTimeSalesman() {
+		this._hourlyRate = 80;
 		this.setEmployeeType(EmployeeType.SALES_PART_TIME_SALESMAN);
 	}
 
