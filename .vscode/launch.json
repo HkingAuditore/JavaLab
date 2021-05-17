@@ -9,7 +9,7 @@
             "name": "Launch AtmTest",
             "request": "launch",
             "mainClass": "LabOne.Atm.AtmTest",
-            "projectName": "JavaLab_5f32acb9"
+            "projectName": "JavaLab_57089cda"
         },
         {
             "type": "java",

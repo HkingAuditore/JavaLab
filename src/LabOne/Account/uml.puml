@@ -19,7 +19,7 @@ class LabOne.Account.AccountException {
 }
 enum LabOne.Account.AccountExceptionType
 
-LabOne.Account.Account --> LabOne.Account.AccountException
-LabOne.Account.AccountException --> LabOne.Account.AccountExceptionType
-Exception <|-- LabOne.Account.AccountException
+LabOne.Account.Account .> LabOne.Account.AccountException
+LabOne.Account.AccountException -> LabOne.Account.AccountExceptionType
+Exception <|-u- LabOne.Account.AccountException
 @enduml

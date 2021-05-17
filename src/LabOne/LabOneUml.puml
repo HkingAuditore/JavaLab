@@ -17,9 +17,7 @@ class LabOne.Atm.AtmSimulator {
 + Account getAccount(int)
 + void readCurrentAccount()
 }
-class LabOne.Atm.AtmTest {
-+ {static} void main(String[])
-}
+
 interface LabOne.Atm.IMethod {
 ~ void execute()
 }
@@ -68,12 +66,19 @@ class LabOne.Account.Account {
 + void withdraw(double)
 + void deposit(double)
 }
-class LabOne.Account.AccountTest {
-+ {static} void main(String[])
-}
 
 
-Exception <|-- LabOne.Atm.AtmException
-Exception <|-- LabOne.Account.AccountException
+
+Exception <|- LabOne.Atm.AtmException
+Exception <|- LabOne.Account.AccountException
+
+LabOne.Atm.AtmSimulator o- LabOne.Account.Account
+LabOne.Atm.AccountData -> LabOne.Account.Account
+LabOne.Atm.AtmSimulator .l.> LabOne.Atm.AtmException
+LabOne.Atm.AtmSimulator *-d- LabOne.Atm.AtmUserInterface
+LabOne.Atm.AtmSimulator -r-> LabOne.Atm.AccountData
+LabOne.Atm.AtmSimulator -d-> LabOne.Atm.AtmMethodHandler
+LabOne.Atm.AtmMethodHandler -> LabOne.Atm.IMethod
+LabOne.Account.Account .u.> LabOne.Account.AccountException
 
 @enduml
