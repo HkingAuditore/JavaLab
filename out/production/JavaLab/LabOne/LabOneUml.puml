@@ -1,0 +1,79 @@
+@startuml
+class LabOne.Atm.AtmSimulator {
+- AtmUserInterface _atmUserInterface
+- Account _currentAccount
+- List<AtmMethodHandler> _methods
++ <<Create>> AtmSimulator()
++ Account getCurrentAccount()
++ void setCurrentAccount(Account)
++ List<AtmMethodHandler> getMethods()
++ void checkBalance()
++ void withdraw()
++ void deposit()
++ void exit()
+- void registerMethods()
++ void Update()
++ boolean checkAccountId(int)
++ Account getAccount(int)
++ void readCurrentAccount()
+}
+class LabOne.Atm.AtmTest {
++ {static} void main(String[])
+}
+interface LabOne.Atm.IMethod {
+~ void execute()
+}
+class LabOne.Atm.AtmMethodHandler {
+- String _methodName
+- IMethod _method
++ <<Create>> AtmMethodHandler(String,IMethod)
++ String getMethodName()
++ void execute()
+}
+class LabOne.Atm.AtmException {
++ <<Create>> AtmException(String)
+}
+class LabOne.Atm.AccountData {
+- {static} Account[] accounts
++ {static} Account[] getAccountsData()
+}
+class LabOne.Account.AccountException {
+- AccountExceptionType exceptionType
++ <<Create>> AccountException(String,AccountExceptionType)
++ AccountExceptionType getExceptionType()
+}
+class LabOne.Atm.AtmUserInterface {
+- Scanner _scaner
+- AtmSimulator _atmSimulator
+~ <<Create>> AtmUserInterface(AtmSimulator)
++ void show(String)
++ void showMenu()
++ void showLine()
++ double getInputDouble(String)
++ int getInputInt(String)
+}
+class LabOne.Account.Account {
+- {static} double annualInterestRate
+- int _id
+- double _balance
+~ <<Create>> Account()
++ <<Create>> Account(int,double)
++ {static} double getAnnualInterestRate()
++ {static} void setAnnualInterestRate(double)
++ int getId()
++ void setId(int)
++ double getBalance()
+- void setBalance(double)
++ double getMonthlyInterest()
++ void withdraw(double)
++ void deposit(double)
+}
+class LabOne.Account.AccountTest {
++ {static} void main(String[])
+}
+
+
+Exception <|-- LabOne.Atm.AtmException
+Exception <|-- LabOne.Account.AccountException
+
+@enduml

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AtmTest",
+            "request": "launch",
+            "mainClass": "LabOne.Atm.AtmTest",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
             "name": "Launch AccountTest",
             "request": "launch",
             "mainClass": "LabOne.Account.AccountTest",

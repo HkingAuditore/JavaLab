@@ -1,0 +1,53 @@
+@startuml
+class LabOne.Atm.AtmSimulator {
+- AtmUserInterface _atmUserInterface
+- Account _currentAccount
+- List<AtmMethodHandler> _methods
++ <<Create>> AtmSimulator()
++ Account getCurrentAccount()
++ void setCurrentAccount(Account)
++ List<AtmMethodHandler> getMethods()
++ void checkBalance()
++ void withdraw()
++ void deposit()
++ void exit()
+- void registerMethods()
++ void Update()
++ boolean checkAccountId(int)
++ Account getAccount(int)
++ void readCurrentAccount()
+}
+class LabOne.Atm.AtmTest {
++ {static} void main(String[])
+}
+interface LabOne.Atm.IMethod {
+~ void execute()
+}
+class LabOne.Atm.AtmMethodHandler {
+- String _methodName
+- IMethod _method
++ <<Create>> AtmMethodHandler(String,IMethod)
++ String getMethodName()
++ void execute()
+}
+class LabOne.Atm.AtmException {
++ <<Create>> AtmException(String)
+}
+class LabOne.Atm.AccountData {
+- {static} Account[] accounts
++ {static} Account[] getAccountsData()
+}
+class LabOne.Atm.AtmUserInterface {
+- Scanner _scaner
+- AtmSimulator _atmSimulator
+~ <<Create>> AtmUserInterface(AtmSimulator)
++ void show(String)
++ void showMenu()
++ void showLine()
++ double getInputDouble(String)
++ int getInputInt(String)
+}
+
+
+Exception <|-- LabOne.Atm.AtmException
+@enduml
