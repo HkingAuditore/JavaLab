@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EmployeeSalaryCalculator",
+            "request": "launch",
+            "mainClass": "LabTwo.Staff.EmployeeSalaryCalculator",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch PersonTest",
+            "request": "launch",
+            "mainClass": "LabTwo.CollegeGraduate.PersonTest",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
             "name": "Launch AtmTest",
             "request": "launch",
             "mainClass": "LabOne.Atm.AtmTest",
