@@ -1,0 +1,16 @@
+@startuml
+class LabFour.AverageException {
++ int errorCode
++ <<Create>> AverageException(int,String)
+}
+class LabFour.AverageTest {
+~ {static} Scanner scanner
+- {static} double tryGetNumber()
+- {static} void calculateAverage()
++ {static} void main(String[])
+}
+
+
+LabFour.Exception <|-- LabFour.AverageException
+LabFour.AverageTest -u-> LabFour.AverageException
+@enduml

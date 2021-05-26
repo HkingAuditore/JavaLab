@@ -1,0 +1,48 @@
+@startuml
+interface LabThree.ITwoDimensionalShape {
+~ double getArea()
+~ double getPerimeter()
+~ ITwoDimensionalShape getShape()
++ {static} ITwoDimensionalShape generateShape(ShapeType,double)
+}
+class LabThree.Test {
+~ {static} Scanner _scanner
+- {static} void getShape(ShapeType)
++ {static} void main(String[])
+}
+class LabThree.RegularHexagon {
+- double _sideLength
++ <<Create>> RegularHexagon(double)
++ double getArea()
++ double getPerimeter()
++ ITwoDimensionalShape getShape()
++ String toString()
++ double getSideLength()
++ void setSideLength(double)
+}
+class LabThree.RegularTriangle {
+- double _sideLength
++ <<Create>> RegularTriangle(double)
++ double getArea()
++ double getPerimeter()
++ ITwoDimensionalShape getShape()
++ String toString()
++ double getSideLength()
++ void setSideLength(double)
+}
+class LabThree.Square {
+- double _sideLength
++ <<Create>> Square(double)
++ double getArea()
++ double getPerimeter()
++ ITwoDimensionalShape getShape()
++ String toString()
++ double getSideLength()
++ void setSideLength(double)
+}
+
+
+LabThree.ITwoDimensionalShape <|.. LabThree.RegularHexagon
+LabThree.ITwoDimensionalShape <|.. LabThree.RegularTriangle
+LabThree.ITwoDimensionalShape <|.. LabThree.Square
+@enduml

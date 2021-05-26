@@ -13,7 +13,7 @@ public class EmployeeSalaryCalculator {
 	private static void generateEmployee() throws Exception {
 		System.out.println("请输入职位:");
 		String employeeTypeStr = scanner.nextLine();
-		System.out.println(employeeTypeStr);
+//		System.out.println(employeeTypeStr);
 		switch (employeeTypeStr) {
 			case "销售经理":
 				employee = new SalesManager();

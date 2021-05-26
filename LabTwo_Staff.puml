@@ -1,0 +1,77 @@
+@startuml
+class LabTwo.Staff.Sales.FullTimeSalesman {
+- double _salesCommission
+- double _sales
++ <<Create>> FullTimeSalesman()
++ double getMonthlySalary()
++ double getSales()
++ void setSales(double)
++ double getSalesCommission()
++ void setSalesCommission(double)
+}
+class LabTwo.Staff.EmployeeSalaryCalculator {
+- {static} Scanner scanner
+- {static} Employee employee
+- {static} void generateEmployee()
+- {static} double inputDouble(String)
+- {static} void showDouble(String,double)
++ {static} void main(String[])
+}
+abstract class LabTwo.Staff.Employee {
+- EmployeeType _employeeType
++ EmployeeType getEmployeeType()
++ void setEmployeeType(EmployeeType)
+}
+class LabTwo.Staff.StaticFunctions {
++ {static} T clamp(T,T,T)
+}
+class LabTwo.Staff.Sales.PartTimeSalesman {
+- double _salesCommission
+- double _sales
++ <<Create>> PartTimeSalesman()
++ double getDailySalary()
++ double getSales()
++ void setSales(double)
++ double getSalesCommission()
++ void setSalesCommission(double)
+}
+abstract class LabTwo.Staff.PartTimeEmployee {
+# double _dailyWorkingHours
+# double _hourlyRate
++ {abstract}double getDailySalary()
++ double getDailyWorkingHours()
++ void setDailyWorkingHours(double)
++ double getHourlyRate()
++ void setHourlyRate(double)
+}
+class LabTwo.Staff.Sales.SalesManager {
+- double _salesCommission
+- double _salesTotal
++ <<Create>> SalesManager()
++ double getMonthlySalary()
++ double getSales()
++ void setSales(double)
++ double getSalesCommission()
++ void setSalesCommission(double)
+}
+interface LabTwo.Staff.Sales.ISales {
++ double getSales()
++ void setSales(double)
++ double getSalesCommission()
++ void setSalesCommission(double)
+}
+abstract class LabTwo.Staff.FullTimeEmployee {
+# double monthlyBasicSalary
++ {abstract}double getMonthlySalary()
+}
+
+
+LabTwo.Staff.Sales.ISales <|.up. LabTwo.Staff.Sales.FullTimeSalesman
+LabTwo.Staff.FullTimeEmployee <|-- LabTwo.Staff.Sales.FullTimeSalesman
+LabTwo.Staff.Sales.ISales <|.left. LabTwo.Staff.Sales.PartTimeSalesman
+LabTwo.Staff.PartTimeEmployee <|-left- LabTwo.Staff.Sales.PartTimeSalesman
+LabTwo.Staff.Employee <|-d- LabTwo.Staff.PartTimeEmployee
+LabTwo.Staff.Sales.ISales <|.down. LabTwo.Staff.Sales.SalesManager
+LabTwo.Staff.FullTimeEmployee <|-- LabTwo.Staff.Sales.SalesManager
+LabTwo.Staff.Employee <|-right- LabTwo.Staff.FullTimeEmployee
+@enduml

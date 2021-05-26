@@ -1,0 +1,29 @@
+@startuml
+class LabTwo.CollegeGraduate.Person {
+- String _name
+- int _birthYear
++ <<Create>> Person(String,int)
++ int getBirthYear()
++ void setBirthYear(int)
++ String getName()
++ void setName(String)
++ String toString()
+}
+class LabTwo.CollegeGraduate.CollegeGraduate {
+- double _gpa
+- int _graduateYear
++ <<Create>> CollegeGraduate(String,int)
++ <<Create>> CollegeGraduate(String,int,double,int)
++ double getGpa()
++ void setGpa(double)
++ int getGraduateYear()
++ void setGraduateYear(int)
++ String toString()
+}
+class LabTwo.CollegeGraduate.PersonTest {
++ {static} void main(String[])
+}
+
+
+LabTwo.CollegeGraduate.Person <|-r- LabTwo.CollegeGraduate.CollegeGraduate
+@enduml

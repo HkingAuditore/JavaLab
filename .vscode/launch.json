@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AverageTest",
+            "request": "launch",
+            "mainClass": "LabFour.AverageTest",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "LabThree.Test",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
             "name": "Launch EmployeeSalaryCalculator",
             "request": "launch",
             "mainClass": "LabTwo.Staff.EmployeeSalaryCalculator",
