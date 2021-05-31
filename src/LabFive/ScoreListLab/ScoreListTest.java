@@ -1,4 +1,4 @@
-package LabFive;
+package LabFive.ScoreListLab;
 
 import java.util.Scanner;
 
@@ -20,11 +20,11 @@ public class ScoreListTest {
 			}
 		}
 
-		System.out.println("Average of the " + scoreList.getScoreList().size() + " scores = " + scoreList.getAverageScore() );
+		System.out.println("Average of the " + scoreList.getScoreList().size() + " scores = " + String.format("%.2f", scoreList.getAverageScore()) );
 		System.out.println("The scores are:" );
 
 		for (int i = 0;i < scoreList.getScoreList().size() ;i++){
-			System.out.println(scoreList.getScoreList().get(i) + " differs from average by " + scoreList.getDeviation(i));
+			System.out.println(scoreList.getScoreList().get(i) + " differs from average by " + String.format("%.2f", scoreList.getDeviation(i)));
 		}
 	}
 }

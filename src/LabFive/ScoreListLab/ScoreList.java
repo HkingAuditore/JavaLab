@@ -1,4 +1,4 @@
-package LabFive;
+package LabFive.ScoreListLab;
 
 import java.util.ArrayList;
 
