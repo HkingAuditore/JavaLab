@@ -23,7 +23,7 @@ public final class AtmSimulator {
         registerMethods();
     }
 
-    //region getter & setter
+    // region getter & setter
     public Account getCurrentAccount() {
         return _currentAccount;
     }
@@ -36,11 +36,11 @@ public final class AtmSimulator {
         return _methods;
     }
 
-    //endregion
+    // endregion
 
-    //region 处理逻辑
+    // region 处理逻辑
 
-    //region 功能逻辑
+    // region 功能逻辑
 
     /**
      * 查询余额
@@ -72,24 +72,24 @@ public final class AtmSimulator {
         throw new AtmException("退出");
     }
 
-    //endregion
+    // endregion
 
-    //region 运行逻辑
+    // region 运行逻辑
 
     /**
      * 注册方法
      */
     private void registerMethods() {
-        //查看余额
+        // 查看余额
         this._methods.add(new AtmMethodHandler("检查余额", this::checkBalance));
 
-        //取钱
+        // 取钱
         this._methods.add(new AtmMethodHandler("取款", this::withdraw));
 
-        //存钱
+        // 存钱
         this._methods.add(new AtmMethodHandler("存款", this::deposit));
 
-        //退出
+        // 退出
         this._methods.add(new AtmMethodHandler("退出", this::exit));
 
     }
@@ -111,12 +111,10 @@ public final class AtmSimulator {
             this._atmUserInterface.show(e.getMessage());
         }
 
-
     }
-    //endregion
+    // endregion
 
-
-    //region 账号处理
+    // region 账号处理
 
     /**
      * 检查账号存在性
@@ -135,8 +133,8 @@ public final class AtmSimulator {
      * @return 返回的Account(找不到为null)
      */
     public Account getAccount(int id) {
-        Optional<Account> opAccount = Arrays.stream(AccountData.getAccountsData()).filter(
-                a -> a.getId() == id).findAny();
+        Optional<Account> opAccount = Arrays.stream(AccountData.getAccountsData()).filter(a -> a.getId() == id)
+                .findAny();
         return opAccount.orElse(null);
 
     }
@@ -155,7 +153,7 @@ public final class AtmSimulator {
         }
     }
 
-    //endregion
+    // endregion
 
-    //endregion
+    // endregion
 }

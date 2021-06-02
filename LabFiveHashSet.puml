@@ -1,0 +1,13 @@
+@startuml
+class LabFive.HashSetLab.NameHashSetTest {
++ {static} void main(String[])
+}
+class LabFive.HashSetLab.NameHashSet {
+- HashSet<String> _nameHashSet
++ HashSet<String> getNameHashSet()
++ boolean addName(String)
++ boolean search(String)
+}
+
+LabFive.HashSetLab.NameHashSetTest  --> LabFive.HashSetLab.NameHashSet
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class LabFive.ScoreListLab.ScoreListTest {
++ {static} void main(String[])
+}
+class LabFive.ScoreListLab.ScoreList {
+- ArrayList<Double> _scoreList
+- double _averageScore
++ void addScore(double)
+- void finalizeScore()
++ ArrayList<Double> getScoreList()
++ double getAverageScore()
++ double getDeviation(int)
++ double getDeviation(double)
+}
+class LabFive.ScoreListLab.ScoreListException {
++ <<Create>> ScoreListException(String)
+}
+
+
+LabFive.ScoreListLab.Exception <|-- LabFive.ScoreListLab.ScoreListException
+LabFive.ScoreListLab.ScoreList -r-> LabFive.ScoreListLab.ScoreListException
+LabFive.ScoreListLab.ScoreListTest --> LabFive.ScoreListLab.ScoreList
+@enduml
