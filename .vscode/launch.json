@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NameHashSetTest",
+            "request": "launch",
+            "mainClass": "LabFive.HashSetLab.NameHashSetTest",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch ScoreListTest",
+            "request": "launch",
+            "mainClass": "LabFive.ScoreListLab.ScoreListTest",
+            "projectName": "JavaLab_5f32acb9"
+        },
+        {
+            "type": "java",
             "name": "Launch AverageTest",
             "request": "launch",
             "mainClass": "LabFour.AverageTest",
